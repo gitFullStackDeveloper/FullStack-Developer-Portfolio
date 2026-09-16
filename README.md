@@ -1,9 +1,5 @@
 # FullStack-Developer-Portfolio
 
-
-
-# MicroZee Solutions Portfolio
-
 MicroZee Solutions Portfolio is a full-stack, dynamically managed portfolio website with a powerful admin panel. All content — projects, services, certifications, contacts, and settings — is managed through the admin panel and served to visitors in real time from a MongoDB database.
 
 ## Features
@@ -26,8 +22,8 @@ MicroZee Solutions Portfolio is a full-stack, dynamically managed portfolio webs
 ## Tech Stack
 
 - **Frontend:** React, Vite, Framer Motion, React Router, Font Awesome
-- **Backend:** Python, FastAPI, Pydantic, Uvicorn
-- **Database:** MongoDB (Motor async driver)
+- **Backend:** Python, FastAPI
+- **Database:** MongoDB 
 - **Authentication:** JWT (PyJWT) + Bcrypt
 - **AI Integration:** Google Gemini API (RAG-powered chatbot)
 - **Email:** SMTP (Gmail App Password)
@@ -37,9 +33,8 @@ MicroZee Solutions Portfolio is a full-stack, dynamically managed portfolio webs
 
 ```text
 MicroZee-Solutions/
-├── frontend/                        # React (Vite) frontend
+├── react/                        # React (Vite) frontend
 │   ├── public/
-│   │   └── api-config.js            # API base URL config
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Website/
@@ -59,28 +54,13 @@ MicroZee-Solutions/
 │   │   └── App.jsx
 │   └── index.html
 │
-└── backend/                         # Python FastAPI backend
+└── python/                         # Python FastAPI backend
     ├── app.py                       # Main API entry
     ├── config.py                    # MongoDB & JWT config
     ├── requirements.txt
-    ├── models/                      # Pydantic models
-    │   ├── project.py
-    │   ├── service.py
-    │   ├── contact.py
-    │   ├── certificate.py
-    │   ├── settings.py
-    │   └── user.py
+    ├── models/
     ├── routes/                      # API routes
-    │   ├── projects.py
-    │   ├── services.py
-    │   ├── contacts.py
-    │   ├── certificates.py
-    │   ├── settings.py
-    │   ├── analytics.py
-    │   ├── auth.py
-    │   └── chat.py
     ├── utils/
-    │   └── email_service.py
     ├── memory.py                    # Chat memory manager
     ├── rag.py                       # RAG context fetcher
     ├── seed_admin.py                # First admin seeder
@@ -123,48 +103,6 @@ The floating chat widget on the portfolio is powered by **ZeeBot**, a RAG-enable
 - Maintains conversation memory per session
 - Answers visitor questions about services, pricing, projects, and experience
 - Gracefully suggests contacting the developer when unsure
-<!-- 
-## Environment Variables
-
-**Frontend (`public/api-config.js`):**
-
-```js
-window.API_BASE = 'https://your-backend-url.com';
-```
-
-**Backend (`.env`):**
-
-```env
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/dbname
-GEMINI_API_KEY=your_gemini_api_key
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_HOST_USER=your-email@gmail.com
-EMAIL_HOST_PASSWORD=your-app-password
-ADMIN_EMAIL=your-admin-email@gmail.com
-JWT_SECRET=your-secret-key
-```
-
-## Getting Started
-
-### Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-python seed_admin.py      # Creates first admin account
-python app.py             # Runs on http://localhost:8000
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev               # Runs on http://localhost:5173
-```
-
-Then log in to `http://localhost:5173/admin/login` with the account created by `seed_admin.py`. -->
 
 ## Project Goal
 
