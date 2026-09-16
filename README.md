@@ -123,7 +123,7 @@ The floating chat widget on the portfolio is powered by **ZeeBot**, a RAG-enable
 - Maintains conversation memory per session
 - Answers visitor questions about services, pricing, projects, and experience
 - Gracefully suggests contacting the developer when unsure
-
+<!-- 
 ## Environment Variables
 
 **Frontend (`public/api-config.js`):**
@@ -164,7 +164,7 @@ npm install
 npm run dev               # Runs on http://localhost:5173
 ```
 
-Then log in to `http://localhost:5173/admin/login` with the account created by `seed_admin.py`.
+Then log in to `http://localhost:5173/admin/login` with the account created by `seed_admin.py`. -->
 
 ## Project Goal
 
