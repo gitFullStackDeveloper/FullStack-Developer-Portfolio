@@ -1,0 +1,321 @@
+/* ========== HOW IT WORKS SECTION ========== */
+.hiw-section {
+  width: 100vw;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 0;
+}
+
+.hiw-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hiw-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+.hiw-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hiw-grid-line {
+  position: absolute;
+  background: #0891ff;
+}
+.hiw-grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: top;
+}
+.hiw-grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.hiw-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hiw-particle {
+  position: absolute;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(8, 145, 255, 0.6);
+}
+
+.hiw-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Header */
+.hiw-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(8, 145, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  background: rgba(8, 145, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(8, 145, 255, 0.8);
+}
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+.highlight-text {
+  background: linear-gradient(135deg, #0891ff 0%, #4dc9f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Steps Container */
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Step Card */
+.hiw-step-card {
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hiw-step-card:hover {
+  border-color: rgba(8, 145, 255, 0.4);
+  box-shadow: 0 20px 60px rgba(8, 145, 255, 0.08);
+}
+
+/* Step Header */
+.hiw-step-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.hiw-step-number-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+.hiw-step-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(8, 145, 255, 0.3);
+}
+.hiw-step-icon-circle {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 145, 255, 0.08);
+  border: 1.5px solid rgba(8, 145, 255, 0.2);
+  border-radius: 50%;
+}
+.hiw-step-icon-circle i {
+  font-size: 1.1rem;
+  color: #0891ff;
+}
+
+/* Connector */
+.hiw-connector {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 1rem;
+  position: relative;
+  border-radius: 2px;
+}
+.hiw-connector-line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0891ff, #4dc9f6);
+  border-radius: 2px;
+}
+.hiw-connector-dot {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #4dc9f6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(77, 201, 246, 0.5);
+}
+
+/* Content */
+.hiw-step-content {
+  text-align: center;
+}
+.hiw-step-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+.hiw-step-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Detail List */
+.hiw-detail-list {
+  list-style: none;
+  padding: 1rem;
+  background: rgba(8, 145, 255, 0.03);
+  border: 1px solid rgba(8, 145, 255, 0.08);
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.hiw-detail-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.hiw-detail-list li i {
+  font-size: 0.75rem;
+  color: #0891ff;
+  flex-shrink: 0;
+}
+
+/* CTA */
+.hiw-cta {
+  text-align: center;
+}
+.hiw-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 5px 25px rgba(8, 145, 255, 0.25);
+  transition: all 0.3s;
+}
+.hiw-cta-btn:hover {
+  box-shadow: 0 8px 35px rgba(8, 145, 255, 0.4);
+  transform: translateY(-2px);
+}
+.cta-icon {
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: rgba(8, 145, 255, 0.2);
+  border-style: solid;
+  pointer-events: none;
+}
+.corner-decoration.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-width: 1px 0 0 1px;
+}
+.corner-decoration.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-width: 1px 1px 0 0;
+}
+.corner-decoration.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-width: 0 0 1px 1px;
+}
+.corner-decoration.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-width: 0 1px 1px 0;
+}
+
+@media (max-width: 1024px) {
+  .hiw-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hiw-container {
+    padding: 0 2rem;
+  }
+  .hiw-connector {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hiw-container {
+    padding: 0 1.2rem;
+  }
+  .corner-decoration {
+    width: 30px;
+    height: 30px;
+  }
+}

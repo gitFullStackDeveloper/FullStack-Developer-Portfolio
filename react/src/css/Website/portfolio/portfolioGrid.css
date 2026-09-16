@@ -1,0 +1,369 @@
+/* ========== PORTFOLIO GRID SECTION ========== */
+.pfg-section {
+  width: 100vw;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 0;
+}
+
+.pfg-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pfg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+.pfg-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pfg-grid-line {
+  position: absolute;
+  background: #0891ff;
+}
+.pfg-grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: top;
+}
+.pfg-grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.pfg-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pfg-particle {
+  position: absolute;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(8, 145, 255, 0.6);
+}
+
+.pfg-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Header */
+.pfg-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(8, 145, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  background: rgba(8, 145, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(8, 145, 255, 0.8);
+}
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+.highlight-text {
+  background: linear-gradient(135deg, #0891ff 0%, #4dc9f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Filters */
+.pfg-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.pfg-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+.pfg-filter-btn i {
+  font-size: 0.85rem;
+}
+.pfg-filter-btn:hover {
+  border-color: rgba(8, 145, 255, 0.4);
+  color: #fff;
+}
+.pfg-filter-btn.active {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(8, 145, 255, 0.3);
+}
+
+/* Grid - 2 Cards Per Row */
+.pfg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Card */
+.pfg-card {
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Card Image */
+.pfg-card-image {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+.pfg-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.pfg-card:hover .pfg-card-image img {
+  transform: scale(1.05);
+}
+.pfg-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+}
+
+.pfg-type-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(8, 145, 255, 0.15);
+  border: 1px solid rgba(8, 145, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #0891ff;
+  backdrop-filter: blur(10px);
+}
+.pfg-featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.pfg-featured-badge i {
+  font-size: 0.55rem;
+}
+
+/* Hover Overlay */
+.pfg-card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  backdrop-filter: blur(5px);
+}
+.pfg-hover-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.pfg-hover-btn.primary {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(8, 145, 255, 0.3);
+}
+.pfg-hover-btn.primary:hover {
+  box-shadow: 0 0 30px rgba(8, 145, 255, 0.5);
+  transform: scale(1.05);
+}
+.pfg-hover-btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.pfg-hover-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Info */
+.pfg-card-info {
+  padding: 1.5rem;
+}
+.pfg-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.pfg-card-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.pfg-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.pfg-tech-tag {
+  padding: 0.25rem 0.7rem;
+  background: rgba(8, 145, 255, 0.06);
+  border: 1px solid rgba(8, 145, 255, 0.15);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.pfg-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #0891ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+.pfg-card-link:hover {
+  gap: 0.7rem;
+}
+.pfg-card-link i {
+  font-size: 0.75rem;
+}
+
+.pfg-no-results {
+  text-align: center;
+  padding: 4rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.pfg-no-results i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: rgba(8, 145, 255, 0.2);
+  border-style: solid;
+  pointer-events: none;
+}
+.corner-decoration.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-width: 1px 0 0 1px;
+}
+.corner-decoration.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-width: 1px 1px 0 0;
+}
+.corner-decoration.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-width: 0 0 1px 1px;
+}
+.corner-decoration.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-width: 0 1px 1px 0;
+}
+
+@media (max-width: 1024px) {
+  .pfg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .pfg-container {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .pfg-container {
+    padding: 0 1.2rem;
+  }
+  .pfg-grid {
+    grid-template-columns: 1fr;
+  }
+  .pfg-card-image {
+    height: 220px;
+  }
+  .corner-decoration {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,60 @@
+/* ========== PROJECT CTA ========== */
+.pdv-cta-card {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 145, 255, 0.05),
+    rgba(8, 145, 255, 0.01)
+  );
+  border: 1px solid rgba(8, 145, 255, 0.08);
+  border-radius: 20px;
+}
+.pdv-cta-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.pdv-cta-card p {
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.pdv-cta-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pdv-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.pdv-cta-btn.primary {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(8, 145, 255, 0.25);
+}
+.pdv-cta-btn.primary:hover {
+  box-shadow: 0 8px 30px rgba(8, 145, 255, 0.4);
+  transform: translateY(-2px);
+}
+.pdv-cta-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.pdv-cta-btn.secondary:hover {
+  border-color: rgba(8, 145, 255, 0.4);
+  background: rgba(8, 145, 255, 0.04);
+}

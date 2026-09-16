@@ -1,0 +1,338 @@
+/* ========== PROJECT GALLERY SECTION ========== */
+.pdg-section {
+  width: 100vw;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 0 3rem;
+}
+
+.pdg-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pdg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+.pdg-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pdg-grid-line {
+  position: absolute;
+  background: #0891ff;
+}
+.pdg-grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: top;
+}
+.pdg-grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.pdg-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pdg-particle {
+  position: absolute;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(8, 145, 255, 0.6);
+}
+
+.pdg-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.pdg-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pdg-main-image-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.6rem;
+  backdrop-filter: blur(10px);
+}
+.pdg-main-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 6px rgba(8, 145, 255, 0.06),
+    0 0 0 12px rgba(8, 145, 255, 0.03);
+}
+.pdg-main-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+}
+.pdg-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pdg-image-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 145, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.pdg-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 8px 25px rgba(8, 145, 255, 0.4);
+  z-index: 2;
+}
+.pdg-badge i {
+  font-size: 0.6rem;
+}
+
+.pdg-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(8, 145, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+.pdg-nav-arrow:hover {
+  background: rgba(8, 145, 255, 0.2);
+  border-color: rgba(8, 145, 255, 0.5);
+  box-shadow: 0 0 25px rgba(8, 145, 255, 0.3);
+}
+.pdg-nav-arrow.prev {
+  left: 1rem;
+}
+.pdg-nav-arrow.next {
+  right: 1rem;
+}
+
+.pdg-image-counter {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.counter-current {
+  color: #0891ff;
+}
+.counter-separator {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0.1rem;
+}
+
+.pdg-thumbnails-container {
+  width: 100%;
+}
+.pdg-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.8rem;
+}
+.pdg-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+.pdg-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pdg-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.pdg-thumb.active {
+  border-color: #0891ff;
+  box-shadow: 0 0 20px rgba(8, 145, 255, 0.25);
+}
+.pdg-thumb.active .pdg-thumb-overlay {
+  background: rgba(8, 145, 255, 0.12);
+}
+.pdg-thumb:hover .pdg-thumb-overlay {
+  background: rgba(8, 145, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .pdg-container {
+    padding: 0 1.2rem;
+  }
+  .pdg-main-image-container {
+    padding: 0.4rem;
+  }
+  .pdg-badge {
+    top: 0.8rem;
+    left: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.7rem;
+  }
+  .pdg-nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .pdg-thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.6rem;
+  }
+}
+
+/* ========== FULL VIEW MODAL ========== */
+.pdg-full-view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.pdg-full-view-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.pdg-full-view-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.pdg-full-view-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(8, 145, 255, 0.9);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pdg-full-view-close:hover {
+  background: #0891ff;
+  transform: scale(1.1);
+}
+
+.pdg-full-view-prev,
+.pdg-full-view-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pdg-full-view-prev:hover,
+.pdg-full-view-next:hover {
+  background: rgba(8, 145, 255, 0.3);
+}
+
+.pdg-full-view-prev {
+  left: 15px;
+}
+
+.pdg-full-view-next {
+  right: 15px;
+}

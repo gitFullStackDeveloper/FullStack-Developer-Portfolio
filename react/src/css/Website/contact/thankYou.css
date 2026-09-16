@@ -1,0 +1,320 @@
+/* ========== THANK YOU PAGE ========== */
+.ty-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 6rem 0 4rem;
+}
+
+.ty-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ty-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  will-change: transform;
+}
+.ty-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ty-grid-line {
+  position: absolute;
+  background: #0891ff;
+}
+.ty-grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: top;
+}
+.ty-grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.ty-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ty-particle {
+  position: absolute;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(8, 145, 255, 0.6);
+}
+
+.ty-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* Success Icon */
+.ty-success-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+.ty-check-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+}
+.ty-check-circle i {
+  font-size: 3rem;
+  color: #fff;
+}
+.ty-success-ripple {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  animation: tyRipple 2s ease-out infinite;
+}
+.ty-success-ripple.delay {
+  animation-delay: 0.6s;
+}
+@keyframes tyRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Content */
+.ty-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 1.2rem;
+}
+.ty-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.ty-wave {
+  display: inline-block;
+  animation: tyWave 0.5s ease-in-out 3;
+}
+@keyframes tyWave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+.ty-description {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 550px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+/* Next Steps */
+.ty-next-steps {
+  margin-bottom: 3rem;
+}
+.ty-steps-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.ty-steps-title i {
+  color: #0891ff;
+}
+.ty-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.ty-step-card {
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.ty-step-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 145, 255, 0.08);
+  border: 1px solid rgba(8, 145, 255, 0.2);
+  border-radius: 12px;
+}
+.ty-step-icon i {
+  font-size: 1.3rem;
+  color: #0891ff;
+}
+.ty-step-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.ty-step-card p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+}
+
+/* Actions */
+.ty-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.ty-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ty-btn.primary {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  box-shadow: 0 5px 25px rgba(8, 145, 255, 0.25);
+}
+.ty-btn.primary:hover {
+  box-shadow: 0 8px 35px rgba(8, 145, 255, 0.4);
+  transform: translateY(-2px);
+}
+.ty-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.ty-btn.secondary:hover {
+  border-color: rgba(8, 145, 255, 0.4);
+  background: rgba(8, 145, 255, 0.05);
+}
+
+/* Contact Info */
+.ty-contact-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+.ty-contact-info a {
+  color: #0891ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.ty-contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: rgba(8, 145, 255, 0.2);
+  border-style: solid;
+  pointer-events: none;
+}
+.corner-decoration.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-width: 1px 0 0 1px;
+}
+.corner-decoration.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-width: 1px 1px 0 0;
+}
+.corner-decoration.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-width: 0 0 1px 1px;
+}
+.corner-decoration.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-width: 0 1px 1px 0;
+}
+
+@media (max-width: 768px) {
+  .ty-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ty-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .corner-decoration {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ty-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .ty-success-icon {
+    width: 100px;
+    height: 100px;
+  }
+}

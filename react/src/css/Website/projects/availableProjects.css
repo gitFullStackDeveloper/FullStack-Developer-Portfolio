@@ -1,0 +1,418 @@
+/* ========== AVAILABLE PROJECTS SECTION ========== */
+.avp-section {
+  width: 100vw;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 0;
+}
+
+.avp-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.avp-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+.avp-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.avp-grid-line {
+  position: absolute;
+  background: #0891ff;
+}
+.avp-grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: top;
+}
+.avp-grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.avp-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.avp-particle {
+  position: absolute;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(8, 145, 255, 0.6);
+}
+
+.avp-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Header */
+.avp-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(8, 145, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  background: rgba(8, 145, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #0891ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(8, 145, 255, 0.8);
+}
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+.highlight-text {
+  background: linear-gradient(135deg, #0891ff 0%, #4dc9f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Filters */
+.avp-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.avp-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+.avp-filter-btn i {
+  font-size: 0.9rem;
+}
+.avp-filter-btn:hover {
+  border-color: rgba(8, 145, 255, 0.4);
+  color: #fff;
+}
+.avp-filter-btn.active {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(8, 145, 255, 0.3);
+}
+
+.avp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Card */
+.avp-card {
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+.avp-card:hover {
+  border-color: rgba(8, 145, 255, 0.5);
+  box-shadow: 0 25px 70px rgba(8, 145, 255, 0.12);
+  transform: translateY(-5px);
+}
+
+/* Card Image */
+.avp-card-image {
+  position: relative;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+}
+.avp-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.avp-card:hover .avp-card-image img {
+  transform: scale(1.05);
+}
+.avp-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(0, 0, 0, 0.4));
+}
+
+/* Hover Overlay */
+.avp-card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  backdrop-filter: blur(4px);
+  flex-direction: column;
+}
+.avp-buy-btn,
+.avp-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.avp-buy-btn {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(8, 145, 255, 0.3);
+}
+.avp-buy-btn:hover {
+  box-shadow: 0 0 40px rgba(8, 145, 255, 0.5);
+  transform: scale(1.05);
+}
+.avp-detail-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.avp-detail-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Info */
+.avp-card-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.avp-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+/* Premium Price Block */
+.avp-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.avp-price-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+.avp-price-currency {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0891ff;
+  margin-top: 3px;
+}
+.avp-price-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0891ff 0%, #4dc9f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.avp-price-discount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.avp-original-price {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+}
+.avp-save-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.avp-card-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.avp-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.avp-tech-tag {
+  padding: 0.25rem 0.7rem;
+  background: rgba(8, 145, 255, 0.06);
+  border: 1px solid rgba(8, 145, 255, 0.15);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Quick Buy Button */
+.avp-card-buy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 5px 20px rgba(8, 145, 255, 0.2);
+}
+.avp-card-buy-btn:hover {
+  box-shadow: 0 8px 30px rgba(8, 145, 255, 0.4);
+  transform: translateY(-2px);
+}
+.avp-card-buy-btn i {
+  font-size: 0.75rem;
+}
+
+/* No Results */
+.avp-no-results {
+  text-align: center;
+  padding: 4rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.avp-no-results i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: rgba(8, 145, 255, 0.2);
+  border-style: solid;
+  pointer-events: none;
+}
+.corner-decoration.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-width: 1px 0 0 1px;
+}
+.corner-decoration.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-width: 1px 1px 0 0;
+}
+.corner-decoration.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-width: 0 0 1px 1px;
+}
+.corner-decoration.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-width: 0 1px 1px 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .avp-grid {
+    grid-template-columns: 1fr;
+  }
+  .avp-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 1024px) {
+  .avp-container {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .avp-container {
+    padding: 0 1.2rem;
+  }
+  .avp-card {
+    grid-template-columns: 1fr;
+  }
+  .avp-card-image {
+    min-height: 200px;
+  }
+  .avp-card-info {
+    padding: 1.5rem;
+  }
+  .corner-decoration {
+    width: 30px;
+    height: 30px;
+  }
+}

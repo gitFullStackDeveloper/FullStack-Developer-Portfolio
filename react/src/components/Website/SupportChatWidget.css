@@ -1,0 +1,322 @@
+/* ========== FLOATING CHAT WIDGET ========== */
+.scw-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Floating Button */
+.scw-toggle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(8, 145, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+/* Pulse ring animation */
+.scw-toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(8, 145, 255, 0.3);
+  animation: scw-pulse 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes scw-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.scw-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 35px rgba(8, 145, 255, 0.6);
+}
+
+/* Chat Window */
+.scw-chat-window {
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 420px;
+  max-height: 600px;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(8, 145, 255, 0.15);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(8, 145, 255, 0.1);
+  overflow: hidden;
+}
+
+.scw-header {
+  padding: 1.2rem 1.5rem;
+  background: rgba(8, 145, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.scw-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scw-header h4 i {
+  color: #0891ff;
+}
+
+.scw-header p {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scw-messages {
+  flex: 1;
+  padding: 1.2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.scw-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 2rem;
+}
+
+.scw-empty i {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.scw-message {
+  max-width: 85%;
+  padding: 0.7rem 1.1rem;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.scw-message.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.scw-message.assistant {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom-left-radius: 4px;
+}
+
+/* Typing indicator */
+.scw-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.4rem 0;
+}
+
+.scw-typing .dot {
+  width: 7px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: scw-bounce 1.4s infinite ease-in-out both;
+}
+
+.scw-typing .dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.scw-typing .dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+.scw-typing .dot:nth-child(3) {
+  animation-delay: 0;
+}
+
+@keyframes scw-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.scw-input-area {
+  padding: 1rem 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scw-input-area input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.scw-input-area input:focus {
+  border-color: rgba(8, 145, 255, 0.5);
+}
+
+.scw-input-area button {
+  background: linear-gradient(135deg, #0891ff, #0066cc);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.scw-input-area button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.scw-input-area button:not(:disabled):hover {
+  box-shadow: 0 4px 15px rgba(8, 145, 255, 0.4);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .scw-chat-window {
+    width: calc(100vw - 2rem);
+    right: -1rem;
+    max-height: 70vh;
+  }
+}
+
+/* ========== HEADER ACTIONS ========== */
+.scw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+}
+
+.scw-header-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.scw-header-actions button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.scw-header-actions button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* ========== MAXIMIZED STATE ========== */
+.scw-chat-window.maximized {
+  width: calc(100vw - 4rem) !important;
+  height: calc(100vh - 10rem) !important;
+  max-height: none !important;
+  border-radius: 20px;
+}
+
+/* ========== RESIZE HANDLE ========== */
+.scw-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 4px 4px 0;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.scw-resize-handle:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Chat messages scrollbar */
+.scw-messages {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(8, 145, 255, 0.4) rgba(0, 0, 0, 0.3);
+}
+
+.scw-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scw-messages::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.scw-messages::-webkit-scrollbar-thumb {
+  background: rgba(8, 145, 255, 0.4);
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.scw-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(8, 145, 255, 0.7);
+}
